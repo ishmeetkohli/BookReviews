@@ -28,7 +28,9 @@ dependencies {
 	implementation 'com.querydsl:querydsl-apt'
 	implementation 'com.querydsl:querydsl-jpa'
 
+	runtimeOnly 'org.springframework.boot:spring-oot-starter-jdbc'
 	runtimeOnly 'org.postgresql:postgresql'
+
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
