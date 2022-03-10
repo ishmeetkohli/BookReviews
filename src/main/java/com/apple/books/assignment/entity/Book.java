@@ -16,7 +16,7 @@ public class Book {
 
     @Id
     @Column
-    @Type(type="uuid-char")
+    @Type(type="org.hibernate.type.PostgresUUIDType")
     private UUID id;
 
     @Column

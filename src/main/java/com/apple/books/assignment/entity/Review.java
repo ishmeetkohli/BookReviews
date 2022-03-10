@@ -15,15 +15,16 @@ import java.util.UUID;
 public class Review {
     @Id
     @Column
-    @Type(type="uuid-char")
+    @Type(type="org.hibernate.type.PostgresUUIDType")
     private UUID id;
 
     @Column
-    @Type(type="uuid-char")
+    @Type(type="org.hibernate.type.PostgresUUIDType")
     @NotNull(message="{NotNull.Review.bookId}")
     private UUID bookId;
 
     @Column
+    @Type(type="text")
     @NotNull(message="{NotNull.Review.review}")
     private String review;
 

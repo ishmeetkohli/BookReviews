@@ -22,16 +22,16 @@ INSERT INTO book (ID, AUTHOR_NAME, BOOK_TITLE, BOOK_URL, BOOK_COVER_URL, BOOK_GE
 ('f98e39f7-5cce-4140-af69-d0d58daa5a1a', 'Alison Macleod', 'Tenderness', 'https://books.apple.com/us/book/tenderness/id1566547772', 'https://is3-ssl.mzstatic.com/image/thumb/Publication115/v4/ec/bb/b7/ecbbb707-1b41-873c-e237-623e358fea07/1033983030.jpg/400x700bb.jpg', 'Literary,Books,Fiction & Literature,Historical', 'In this moving historical novel, wonderful things happen when art stands up to censorship. British Canadian author Alison MacLeod explores the inspiring story behind author D. H. Lawrence‚Äôs brave and controversial novel <i>Lady Chatterley‚Äôs Lover</i>. In 1928, Lawrence published the novel privately, knowing that its honest depiction of sexuality would prompt swift censorship. But it wasn‚Äôt until 1960‚Äîthree decades after the author‚Äôs death‚Äîthat the full text was finally made available to the public, prompting a British trial that ended in a groundbreaking win for the publisher. MacLeod deftly weaves factual accounts together with fictionalized characters and events, bringing to life the struggles around sensuality, class, and freedom of speech that marked both of these turbulent historical periods. <i>Tenderness</i> is a story about love‚Äîand the fight to celebrate it.', 0, 0);
 
 
-CREATE TABLE book_reviews (
+CREATE TABLE review (
                       ID UUID PRIMARY KEY,
                       BOOK_ID UUID references book(ID),
                       REVIEW TEXT,
                       RATING DECIMAL(2) NOT NULL,
                       USER_EMAIL VARCHAR(250) NOT NULL,
-                      DATE_TIME DATETIME
+                      DATE_TIME TIMESTAMP
 );
 
-ALTER TABLE book_reviews ADD CONSTRAINT book_user UNIQUE(BOOK_ID, USER_EMAIL);
+ALTER TABLE review ADD CONSTRAINT book_user UNIQUE(BOOK_ID, USER_EMAIL);
 
 INSERT INTO review (ID, BOOK_ID, REVIEW, RATING, USER_EMAIL, DATE_TIME) VALUES
 ('8b993f98-5439-4cf4-9d8f-7d016b4358a2', '4a739246-02ef-4211-a76c-03af3419b91d', 'Great Book', 4.5, 'ishmeetkohli@gmail.com', '2008-11-11 13:23:44'),
