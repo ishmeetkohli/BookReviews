@@ -20,3 +20,13 @@ export const saveReview = (id, bookId, email, review, rating) => {
 
     fetch(`/api/review`, requestOptions)
 };
+
+export const deleteReview = (review) => {
+    const requestOptions = {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(review)
+    };
+
+    fetch(`/api/review`, requestOptions)
+};

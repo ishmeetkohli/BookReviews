@@ -36,4 +36,8 @@ public class ReviewService {
         review.setDateTime(LocalDateTime.now());
         return reviewRepository.save(review);
     }
+
+    public void deleteReview(Review review) {
+        reviewRepository.delete(review);
+    }
 }

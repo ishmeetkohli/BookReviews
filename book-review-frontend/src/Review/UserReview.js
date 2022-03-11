@@ -4,6 +4,7 @@ import {Rating} from "react-simple-star-rating";
 import moment from "moment";
 import {Divider} from "@material-ui/core";
 import ReviewBox from "./ReviewBox";
+import {deleteReview, saveReview} from "./ReviewService";
 
 const UserReview = (props) => {
 
@@ -11,10 +12,15 @@ const UserReview = (props) => {
     const [renderHtml, setRenderHtml] = useState([])
     const {isAuthenticated} = useAuth0();
 
-    function handleClick() {
+    function handleEdit() {
         setRenderHtml(
             <ReviewBox onSave={props.onSave} book={props.book} review={props.userReview}/>
         )
+    }
+
+    function handleDelete() {
+        deleteReview(props.userReview)
+        props.onSave()
     }
 
     useEffect(() => {
@@ -26,7 +32,8 @@ const UserReview = (props) => {
                 <br/><br/>
                 {moment(props.userReview.dateTime).format('MMMM d, YYYY')}
                 <br/><br/>
-                <button onClick={handleClick}>Edit Review</button>
+                <button onClick={handleEdit}>Edit Review</button>
+                <button onClick={handleDelete}>Delete Review</button>
                 <br/><br/>
                 <Divider/>
             </div>

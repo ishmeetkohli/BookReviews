@@ -6,6 +6,7 @@ import com.apple.books.assignment.service.ReviewService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -51,5 +52,11 @@ public class ReviewController {
         log.info("ReviewController:  save review");
         Review resource = reviewService.saveReview(review);
         return ResponseEntity.ok(resource);
+    }
+
+    @DeleteMapping(path = Constants.DELETE_REVIEW)
+    public void deleteReview(@RequestBody Review review) {
+        log.info("ReviewController:  delete review");
+        reviewService.deleteReview(review);
     }
 }
