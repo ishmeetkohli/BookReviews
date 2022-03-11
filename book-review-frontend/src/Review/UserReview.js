@@ -14,13 +14,12 @@ const UserReview = (props) => {
 
     function handleEdit() {
         setRenderHtml(
-            <ReviewBox onSave={props.onSave} book={props.book} review={props.userReview}/>
+            <ReviewBox onSave={props.reloadPage} book={props.book} review={props.userReview}/>
         )
     }
 
     function handleDelete() {
-        deleteReview(props.userReview)
-        props.onSave()
+        deleteReview(props.userReview, props.reloadPage)
     }
 
     useEffect(() => {

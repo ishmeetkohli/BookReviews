@@ -23,7 +23,7 @@ export const saveReview = (id, bookId, email, review, rating, callback) => {
     fetch(`/api/review`, requestOptions).then(callback())
 };
 
-export const deleteReview = (review) => {
+export const deleteReview = (review, callback) => {
     const requestOptions = {
         method: 'DELETE',
         headers: {'Content-Type': 'application/json',
@@ -32,5 +32,5 @@ export const deleteReview = (review) => {
         body: JSON.stringify(review)
     };
 
-    fetch(`/api/review`, requestOptions)
+    fetch(`/api/review`, requestOptions).then(callback())
 };

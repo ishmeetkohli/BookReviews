@@ -56,7 +56,7 @@ const Review = (props) => {
             <br/>
             <div key={userReview.review}>
                 {(userReview.review || userReview.rating) ?
-                    <UserReview userReview={userReview} onSave={reloadPage} book={book}/> :
+                    <UserReview userReview={userReview} reloadPage={reloadPage} book={book}/> :
                     <ReviewBox onSave={reloadPage} book={book}/>}
             </div>
             <br/>
