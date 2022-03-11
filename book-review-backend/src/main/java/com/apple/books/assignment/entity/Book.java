@@ -20,27 +20,26 @@ public class Book {
     private UUID id;
 
     @Column
-    @NotNull(message="{NotNull.Book.authorName}")
+    @NotNull
     private String authorName;
 
     @Column
-    @NotNull(message="{NotNull.Book.bookTitle}")
+    @NotNull
     private String bookTitle;
 
     @Column
-    @NotNull(message="{NotNull.Book.bookUrl}")
+    @NotNull
     private String bookUrl;
 
     @Column
-    @NotNull(message="{NotNull.Book.bookCoverUrl}")
+    @NotNull
     private String bookCoverUrl;
 
     @Column
-    @NotNull(message="{NotNull.Book.bookGenres}")
+    @NotNull
     private String bookGenres;
 
     @Column
-    @NotNull(message="{NotNull.Book.bookEditorialNotes}")
     private String bookEditorialNotes;
 
     private double bookAverageRating;

@@ -22,24 +22,22 @@ public class Review {
 
     @Column
     @Type(type="org.hibernate.type.PostgresUUIDType")
-    @NotNull(message="{NotNull.Review.bookId}")
+    @NotNull
     private UUID bookId;
 
     @Column
     @Type(type="text")
-    @NotNull(message="{NotNull.Review.review}")
     private String review;
 
     @Column
-    @NotNull(message="{NotNull.Review.rating}")
     private double rating;
 
     @Column
-    @NotNull(message="{NotNull.Review.userEmail}")
+    @NotNull
     private String userEmail;
 
     @Column
-    @NotNull(message="{NotNull.Review.dateTime}")
+    @NotNull
     private LocalDateTime dateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
