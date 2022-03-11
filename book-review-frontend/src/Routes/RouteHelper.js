@@ -5,6 +5,7 @@ export const openReviews = (book) => {
         pathname: '/Review',
         state: book
     });
+    window.scrollTo(0, 0)
 };
 
 export const openHome = () => {
