@@ -4,5 +4,5 @@ pluginManagement {
 		gradlePluginPortal()
 	}
 }
-rootProject.name = 'book-review'
-include ':book-review-backend', ':book-review-frontend'
+
+rootProject.name = 'book-review-frontend'
