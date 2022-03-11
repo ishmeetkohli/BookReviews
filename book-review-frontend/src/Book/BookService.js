@@ -1,6 +1,3 @@
-import axios from "axios";
-
 export const getBooks = () => {
-    // return axios.get('/api/books');
-    return fetch('/api/books').then(data => data.json())
+    return fetch('/api/books').then(data => data.text()).then(data => {return data ? JSON.parse(data) : {}})
 };
