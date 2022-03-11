@@ -36,7 +36,7 @@ const ReviewFeed = () => {
 
     return (
         isAuthenticated && (
-            <div>
+            <div className="review-feed">
                 <h1>Latest reviews</h1>
                 <Divider/>
                 <ReviewTable reviews={reviews} feed={true}/>

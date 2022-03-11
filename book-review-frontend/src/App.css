@@ -64,3 +64,13 @@ h3 {
     padding: 2em;
     max-width: 500px;
 }
+
+.nav-actions {
+    display: flex;
+}
+
+.nav-buttons {
+    float: right;
+    margin-left: 100px;
+    margin-right: 10px;
+}

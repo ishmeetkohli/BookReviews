@@ -1,13 +1,6 @@
-import {Rating} from "react-simple-star-rating";
 import React from "react";
-import history from "../history";
-
-function openReviews(book) {
-    history.push({
-        pathname: '/Review',
-        state: book
-    });
-}
+import {Rating} from "react-simple-star-rating";
+import {openReviews} from "../Routes/RouteHelper";
 
 const BookRating = (props) => (
     <div>

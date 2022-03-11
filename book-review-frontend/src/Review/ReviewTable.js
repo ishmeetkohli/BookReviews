@@ -11,7 +11,7 @@ const ReviewTable = (props) => (
                 <Rating initialValue={review.rating} allowHalfIcon={true} readonly={true}/>
                 <br/><br/>
                 <h3>{review.review}</h3><br/><br/>
-                {review.userEmail}, {moment(review.dateTime).format('MMMM d, YYYY')}
+                {review.userEmail}, {moment(review.dateTime).format('MMMM DD, YYYY')}
                 <br/><br/>
 
                 <div className="divider">

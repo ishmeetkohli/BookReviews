@@ -1,10 +1,11 @@
 import './App.css';
-import Routes from "./Routes";
-import LoginButton from "./Login/LoginButton";
 import React from "react";
+import Routes from "./Routes/Routes";
+import LoginButton from "./Login/LoginButton";
 import LogoutButton from "./Login/LogoutButton";
 import Profile from "./Login/Profile";
 import ReviewFeed from "./Review/ReviewFeed";
+import {openHome} from "./Routes/RouteHelper";
 
 function App() {
     return (
@@ -13,12 +14,17 @@ function App() {
                 <Routes/>
             </div>
             <div className="side-bar">
-                <div className="login-button">
-                    <Profile/>
-                    <LoginButton/>
-                    <LogoutButton/>
+                <div className="nav-actions">
+                    <div>
+                        <Profile/>
+                    </div>
+                    <div className="nav-buttons">
+                        <button onClick={openHome}>Home</button>
+                        <LoginButton/>
+                        <LogoutButton/>
+                    </div>
                 </div>
-                <div className="review-feed">
+                <div>
                     <ReviewFeed/>
                 </div>
 
