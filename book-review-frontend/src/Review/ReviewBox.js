@@ -16,6 +16,7 @@ const ReviewBox = (props) => {
     const {user, isAuthenticated} = useAuth0();
 
     const handleRating = (rate) => {
+        alert(rate)
         updateFormData({
             ...formData,
             rating: rate
@@ -32,8 +33,8 @@ const ReviewBox = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        saveReview(props.review ? props.review.id : null, props.book.id, user.email, formData.review, formData.rating / parseFloat(20))
-        props.onSave();
+        alert(formData.rating / parseFloat(20))
+        saveReview(props.review ? props.review.id : null, props.book.id, user.email, formData.review, formData.rating / parseFloat(20), props.onSave())
     };
 
     return isAuthenticated && (

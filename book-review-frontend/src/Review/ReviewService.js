@@ -10,7 +10,7 @@ export const getReviewByBookIdUserEmail = (bookId, email) => {
     return fetch(`/api/reviews/book/${bookId}/user/${email}`).then(data => data.text()).then(data => {return data ? JSON.parse(data) : {}})
 };
 
-export const saveReview = (id, bookId, email, review, rating) => {
+export const saveReview = (id, bookId, email, review, rating, callback) => {
     const requestOptions = {
         method: 'POST',
         headers: {'Content-Type': 'application/json',
@@ -19,7 +19,8 @@ export const saveReview = (id, bookId, email, review, rating) => {
         body: JSON.stringify({ id: id, review: review, rating: rating, userEmail: email, bookId: bookId})
     };
 
-    fetch(`/api/review`, requestOptions)
+    alert(requestOptions.body)
+    fetch(`/api/review`, requestOptions).then(callback())
 };
 
 export const deleteReview = (review) => {

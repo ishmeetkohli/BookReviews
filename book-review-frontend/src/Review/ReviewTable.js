@@ -9,7 +9,7 @@ const ReviewTable = (props) => (
             <div key={review.id} className="review">
                 <br/>
                 <h3>{review.review}</h3><br/><br/>
-                <Rating initialValue={review.rating} readonly={true}/>
+                <Rating initialValue={review.rating} allowHalfIcon={true} readonly={true}/>
                 <br/><br/>
                 {review.userEmail}, {moment(review.dateTime).format('MMMM d, YYYY')}
                 <br/><br/>

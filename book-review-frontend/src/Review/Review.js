@@ -16,7 +16,7 @@ const Review = (props) => {
 
     useEffect(() => {
         fetchData();
-    }, [reload])
+    }, [reload, isLoading])
 
     const fetchData = () => {
         console.log('fetching new Data')
@@ -54,9 +54,11 @@ const Review = (props) => {
             <br/><br/>
             <Divider/>
             <br/>
-            {(userReview.review || userReview.rating) ?
-                <UserReview userReview={userReview} onSave={reloadPage} book={book}/> :
-                <ReviewBox onSave={reloadPage} book={book}/>}
+            <div key={userReview.review}>
+                {(userReview.review || userReview.rating) ?
+                    <UserReview userReview={userReview} onSave={reloadPage} book={book}/> :
+                    <ReviewBox onSave={reloadPage} book={book}/>}
+            </div>
             <br/>
             <ReviewTable reviews={reviews}/>
         </div>

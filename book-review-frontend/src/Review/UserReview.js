@@ -4,7 +4,7 @@ import {Rating} from "react-simple-star-rating";
 import moment from "moment";
 import {Divider} from "@material-ui/core";
 import ReviewBox from "./ReviewBox";
-import {deleteReview, saveReview} from "./ReviewService";
+import {deleteReview} from "./ReviewService";
 
 const UserReview = (props) => {
 
