@@ -11,10 +11,11 @@ export const getReviewByBookIdUserEmail = (bookId, email) => {
 };
 
 export const saveReview = (id, bookId, email, review, rating) => {
-
     const requestOptions = {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin' : '*',
+            'Access-Control-Allow-Credentials' : true },
         body: JSON.stringify({ id: id, review: review, rating: rating, userEmail: email, bookId: bookId})
     };
 
@@ -24,7 +25,9 @@ export const saveReview = (id, bookId, email, review, rating) => {
 export const deleteReview = (review) => {
     const requestOptions = {
         method: 'DELETE',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin' : '*',
+            'Access-Control-Allow-Credentials' : true },
         body: JSON.stringify(review)
     };
 
