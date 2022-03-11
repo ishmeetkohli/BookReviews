@@ -19,7 +19,6 @@ const Review = (props) => {
     }, [reload, isLoading])
 
     const fetchData = () => {
-        console.log('fetching new Data')
         getReviewsBookIdByOthers(book.id, user ? user.email : "email")
             .then(reviews => {
                 setReviews(reviews)
@@ -34,6 +33,7 @@ const Review = (props) => {
     }
 
     const reloadPage = () => {
+        console.log('reload called !!')
         setReload(!reload)
     }
 
