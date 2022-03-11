@@ -8,8 +8,8 @@ CREATE TABLE book (
                        BOOK_COVER_URL VARCHAR(250) NOT NULL,
                        BOOK_GENRES VARCHAR(250) NOT NULL,
                        BOOK_EDITORIAL_NOTES TEXT NOT NULL,
-                       BOOK_AVERAGE_RATING DECIMAL(2) NOT NULL,
-                       BOOK_RATINGS INT NOT NULL
+                       BOOK_AVERAGE_RATING DECIMAL(2),
+                       BOOK_RATINGS INT
 );
 
 INSERT INTO book (ID, AUTHOR_NAME, BOOK_TITLE, BOOK_URL, BOOK_COVER_URL, BOOK_GENRES, BOOK_EDITORIAL_NOTES, BOOK_AVERAGE_RATING, BOOK_RATINGS) VALUES
@@ -24,11 +24,11 @@ INSERT INTO book (ID, AUTHOR_NAME, BOOK_TITLE, BOOK_URL, BOOK_COVER_URL, BOOK_GE
 
 CREATE TABLE review (
                       ID UUID PRIMARY KEY,
-                      BOOK_ID UUID references book(ID),
+                      BOOK_ID UUID references book(ID) NOT NULL,
                       REVIEW TEXT,
                       RATING DECIMAL(2) NOT NULL,
                       USER_EMAIL VARCHAR(250) NOT NULL,
-                      DATE_TIME TIMESTAMP
+                      DATE_TIME TIMESTAMP NOT NULL
 );
 
 ALTER TABLE review ADD CONSTRAINT book_user UNIQUE(BOOK_ID, USER_EMAIL);
@@ -36,5 +36,5 @@ ALTER TABLE review ADD CONSTRAINT book_user UNIQUE(BOOK_ID, USER_EMAIL);
 INSERT INTO review (ID, BOOK_ID, REVIEW, RATING, USER_EMAIL, DATE_TIME) VALUES
 ('8b993f98-5439-4cf4-9d8f-7d016b4358a2', '4a739246-02ef-4211-a76c-03af3419b91d', 'Great Book', 4.5, 'ishmeetkohli@gmail.com', '2008-11-11 13:23:44'),
 ('ea310f99-c8fc-4ecb-9f1f-9dd87a79d7f4', '4a739246-02ef-4211-a76c-03af3419b91d', 'Totally love this book', 5.0, 'harneetkaur@gmail.com', '2008-11-09 15:45:21'),
-('08532f50-8b36-424f-97c1-fffda93592d2', '4a739246-02ef-4211-a76c-03af3419b91d', 'Enjoyed the book a lot', 4.0, 'randomPerson@gmail.com', '2008-11-11 11:12:01'),
+('08532f50-8b36-424f-97c1-fffda93592d2', '4a739246-02ef-4211-a76c-03af3419b91d', 'Enjoyed reading this book', 4.0, 'randomPerson@gmail.com', '2008-11-11 11:12:01'),
 ('f2182d82-7d93-4004-baf9-6cc02c7a88b6', '4a739246-02ef-4211-a76c-03af3419b91d', 'Enjoyed the book a lot', 3.5, 'dummy_1234@gmail.com', '2008-10-29 14:56:59');
