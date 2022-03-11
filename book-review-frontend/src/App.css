@@ -62,4 +62,5 @@ h3 {
     float: bottom;
     background: slategray;
     padding: 2em;
+    max-width: 500px;
 }
