@@ -1,7 +1,6 @@
 package com.apple.books.assignment.service;
 
 import java.util.List;
-import java.util.UUID;
 
 import com.apple.books.assignment.entity.Book;
 import com.apple.books.assignment.entity.Review;

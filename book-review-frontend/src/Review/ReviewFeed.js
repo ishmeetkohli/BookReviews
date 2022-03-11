@@ -39,7 +39,7 @@ const ReviewFeed = () => {
             <div>
                 <h1>Latest reviews</h1>
                 <Divider/>
-                <ReviewTable reviews={reviews}/>
+                <ReviewTable reviews={reviews} feed={true}/>
             </div>
         )
     )

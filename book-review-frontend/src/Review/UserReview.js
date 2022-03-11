@@ -26,9 +26,9 @@ const UserReview = (props) => {
         setRenderHtml(
             <div>
                 <h2>Your Review :</h2>
-                <h3>{props.userReview.review}</h3><br/><br/>
                 <Rating readonly={true} initialValue={props.userReview.rating} showTooltip={true} allowHalfIcon={true}/>
                 <br/><br/>
+                <h3>{props.userReview.review}</h3><br/><br/>
                 {moment(props.userReview.dateTime).format('MMMM d, YYYY')}
                 <br/><br/>
                 <button onClick={handleEdit}>Edit Review</button>

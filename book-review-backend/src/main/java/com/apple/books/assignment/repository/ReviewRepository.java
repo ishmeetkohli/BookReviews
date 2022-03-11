@@ -11,7 +11,7 @@ import java.util.UUID;
 
 
 @RepositoryRestResource()
-public interface ReviewRepository extends JpaRepository<Review, Integer>, JpaSpecificationExecutor<Review>,
+public interface ReviewRepository extends JpaRepository<Review, UUID>, JpaSpecificationExecutor<Review>,
         QuerydslPredicateExecutor<Review> {
 
     List<Review> findAllByBookIdOrderByDateTimeDesc(UUID bookId);
