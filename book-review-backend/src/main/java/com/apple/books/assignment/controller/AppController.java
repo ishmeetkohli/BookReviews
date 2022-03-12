@@ -16,4 +16,9 @@ public class AppController {
         return "forward:/index.html";
     }
 
+    @RequestMapping({"/*"})
+    public String loadOtherRoutes() {
+        return "forward:/index.html";
+    }
+
 }
