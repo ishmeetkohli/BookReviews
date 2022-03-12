@@ -16,8 +16,8 @@ public class AppController {
         return "forward:/index.html";
     }
 
-    @RequestMapping({"/*"})
-    public String loadOtherRoutes() {
+    @RequestMapping({"/Review"})
+    public String loadReviews() {
         return "forward:/index.html";
     }
 
